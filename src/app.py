@@ -1,7 +1,8 @@
 """_summary_
 """
 import sys
-from PyQt5 import QtWidgets
+import os
+from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
@@ -13,16 +14,10 @@ class MyWindow(QMainWindow):
     """
 
     def __init__(self):
-        super(MyWindow, self).__init__()
-        self.setGeometry(200, 200, 200, 200)
-        self.initUI()
-
-    def initUI(self):
-        """_summary_
-        """
-        self.label = QtWidgets.QLabel(self)
-        self.label.setText("my first label")
-        self.label.move(50, 50)
+        super(MyWindow, self).__init__()  # Call the inherited classes __init__ method
+        uic.loadUi(os.path.join(
+            os.path.dirname(__file__), 'ui', 'main.ui'), self)  # Load the .ui file
+        self.show()  # Show the GUI
 
 
 def window():
