@@ -11,6 +11,14 @@
       "program": "${file}",
       "console": "integratedTerminal",
       "justMyCode": true
-    }
-  ]
+    },
+      {
+        "name": "Test",
+        "type": "python",
+        "request": "launch",
+        "module": "src.temp_run",
+        "console": "integratedTerminal",
+        "justMyCode": true
+      }
+    ]
 }
