@@ -11,4 +11,5 @@ if os.path.isfile(test_path):
 my_project = Project(test_path, 'proj name', 'proj desc')
 
 my_design = Design('des name', 'des desc')
+my_project.designs[my_design.name] = my_design
 my_project.save()

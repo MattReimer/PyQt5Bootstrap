@@ -50,7 +50,7 @@ class Project:
 
         # Designs
         xml_designs = etree.SubElement(xml_project, 'Designs')
-        [design.save(xml_designs) for design in self.designs]
+        [design.save(xml_designs) for _name, design in self.designs.items()]
 
         with open(self.project_xml_path, 'w') as f:
             f.write(etree.tostring(xml_project, pretty_print=True).decode())
